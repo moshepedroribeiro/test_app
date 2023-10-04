@@ -1,3 +1,17 @@
+GIT
+  remote: https://github.com/rspec/rspec-rails
+  revision: 7c18efb0f987ed2d310f2298400f938e629ef032
+  branch: 4-0-maintenance
+  specs:
+    rspec-rails (4.0.2)
+      actionpack (>= 4.2)
+      activesupport (>= 4.2)
+      railties (>= 4.2)
+      rspec-core (~> 3.10)
+      rspec-expectations (~> 3.10)
+      rspec-mocks (~> 3.10)
+      rspec-support (~> 3.10)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -58,6 +72,7 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
+    bcrypt (3.1.19)
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
@@ -77,6 +92,12 @@ GEM
       rexml
     crass (1.0.6)
     date (3.3.3)
+    devise (4.7.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     diff-lcs (1.5.0)
     erubi (1.12.0)
     factory_bot (6.2.1)
@@ -130,6 +151,7 @@ GEM
     nokogiri (1.15.4)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
     public_suffix (5.0.3)
     puma (4.3.12)
       nio4r (~> 2.0)
@@ -154,6 +176,10 @@ GEM
       bundler (>= 1.3.0)
       railties (= 6.0.6.1)
       sprockets-rails (>= 2.0.0)
+    rails-controller-testing (1.0.5)
+      actionpack (>= 5.0.1.rc1)
+      actionview (>= 5.0.1.rc1)
+      activesupport (>= 5.0.1.rc1)
     rails-dom-testing (2.2.0)
       activesupport (>= 5.0.0)
       minitest
@@ -172,24 +198,19 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (2.8.1)
+    responders (3.1.0)
+      actionpack (>= 5.2)
+      railties (>= 5.2)
     rexml (3.2.6)
-    rspec-core (3.9.3)
-      rspec-support (~> 3.9.3)
-    rspec-expectations (3.9.4)
+    rspec-core (3.12.2)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.3)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.9.0)
-    rspec-mocks (3.9.1)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.6)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.9.0)
-    rspec-rails (3.9.1)
-      actionpack (>= 3.0)
-      activesupport (>= 3.0)
-      railties (>= 3.0)
-      rspec-core (~> 3.9.0)
-      rspec-expectations (~> 3.9.0)
-      rspec-mocks (~> 3.9.0)
-      rspec-support (~> 3.9.0)
-    rspec-support (3.9.4)
+      rspec-support (~> 3.12.0)
+    rspec-support (3.12.1)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
@@ -227,6 +248,8 @@ GEM
     tzinfo (1.2.11)
       thread_safe (~> 0.1)
     vcr (6.2.0)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -254,6 +277,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara
+  devise
   factory_bot_rails
   faker
   httparty
@@ -261,7 +285,8 @@ DEPENDENCIES
   listen (~> 3.2)
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.4)
-  rspec-rails (~> 3.6)
+  rails-controller-testing
+  rspec-rails!
   sass-rails (>= 6)
   shoulda-matchers (~> 3.1)
   spring
