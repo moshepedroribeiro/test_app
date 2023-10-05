@@ -27,3 +27,21 @@
 <br>
 
 <%= link_to 'New Customer', new_customer_path %>
+
+
+<br>
+
+<a href="#" id="my-link">Add Message</a>
+<div id="my-div"></div>
+
+<script>
+    var $link = document.querySelector('#my-link');
+
+    $link.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        setTimeout(() => {
+            document.querySelector('#my-div').innerHTML = '<h1>Yes!</h1>'
+        }, 2000);
+    }, false);
+</script>
